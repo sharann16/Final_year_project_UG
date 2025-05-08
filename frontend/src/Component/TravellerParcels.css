@@ -1,0 +1,117 @@
+/* Full-page Centering */
+.traveller-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f5f5f5;
+    animation: fadeBackground 1s ease-in-out;
+}
+  
+/* Smooth Background Transition */
+@keyframes fadeBackground {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
+/* Main Box */
+.traveller-box {
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    animation: slideIn 0.6s ease-out;
+}
+  
+/* Smooth Form Appearance */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+  
+/* Title */
+.traveller-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+  
+/* Smooth Fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+  
+/* Parcel Cards */
+.parcel-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd; 
+    margin-left: 40px; /* Add left margin */
+    margin-right: 40px; /* Add left margin */
+    padding-left: 100px; /* Add left padding */
+    padding-right: 100px; /* Add left padding */
+    display: flex;
+    justify-content: space-between;  /* Align text left & button right */
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+  
+/* Hover Effect */
+.parcel-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+  
+/* Left Side: Parcel Info */
+.parcel-info {
+    flex: 1;  /* Takes most of the space */
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* Right Side: Button */
+.parcel-action {
+    margin-left: 20px;
+}
+
+/* Styled Button */
+.parcel-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.parcel-button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Highlighted Status */
+.status-delivered {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.status-pending {
+    color: #ff9800;
+    font-weight: bold;
+}

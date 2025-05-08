@@ -1,0 +1,109 @@
+/* Full-page Centering */
+#upload-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f8f9fa;
+  animation: fadeBackground 1s ease-in-out;
+}
+
+/* Smooth Background Transition */
+@keyframes fadeBackground {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Centered Upload Box */
+#upload-box {
+  width: 100%;
+  max-width: 420px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  animation: slideIn 0.6s ease-out;
+}
+
+/* Smooth Box Appearance */
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Title */
+#upload-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+/* Input fields */
+.upload-input {
+  width: 100%;
+  max-width: 350px;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #fafafa;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+.upload-input:focus {
+  border-color: #777;
+  background: #fff;
+  outline: none;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* File upload */
+#image-upload {
+  margin-top: 10px;
+  border: none;
+  background: none;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+/* Selected file text */
+#selected-file {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Upload Button */
+#upload-button {
+  width: 100%;
+  max-width: 350px;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #444, #444);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#upload-button:hover {
+  background: linear-gradient(135deg, #222, #222);
+  transform: scale(1.03);
+}
+
+#upload-button:active {
+  transform: scale(0.98);
+}

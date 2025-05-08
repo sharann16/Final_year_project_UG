@@ -1,0 +1,145 @@
+/* Overall dashboard container */
+#dashboard-container {
+    background-color: #f5f5f5; /* Light background for a clean look */
+    color: #333; /* Dark gray for text instead of white */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Dashboard main box */
+#dashboard-box {
+    width: 100%;
+    max-width: 800px;
+    background: #ffffff; /* White background */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+/* Dashboard title */
+#dashboard-title {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #222; /* Dark gray instead of white */
+}
+
+/* User info box */
+#user-info {
+    background-color: #e9ecef; /* Light gray */
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#user-info p {
+    font-size: 14px;
+    color: #555; /* Medium gray */
+    margin: 5px 0;
+}
+
+/* Buttons */
+.dashboard-button {
+    background: linear-gradient(135deg, #444, #222);
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 10px 5px 0 0;
+    font-size: 14px;
+}
+
+.dashboard-button:hover {
+    background: linear-gradient(135deg, #444, #222);
+}
+
+/* Parcel section */
+#parcels-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 20px;
+    text-align: center;
+    color: #222; /* Dark gray */
+}
+
+/* Parcel list container */
+#parcel-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Parcel card */
+.parcel-card {
+    background-color: #ffffff; /* White card */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.parcel-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.parcel-card p {
+    font-size: 14px;
+    color: #555; /* Medium gray */
+    margin: 5px 0;
+}
+
+/* No parcels message */
+#no-parcels-message {
+    text-align: center;
+    font-size: 16px;
+    color: #888;
+}
+
+/* Parcel status */
+.parcel-status {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.status-posted {
+    background-color: #f39c12;
+    color: #000;
+}
+
+.status-selected {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+/* Traveler details */
+#traveler-details {
+    background-color: #d4edda; /* Light green for better readability */
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#traveler-details h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222; /* Darker text */
+}
+
+#traveler-details p {
+    font-size: 14px;
+    color: #555;
+}
