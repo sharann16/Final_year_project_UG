@@ -10,6 +10,7 @@ const Dashboard = () => {
   const [parcels, setParcels] = useState([]);
   const [isTraveler, setIsTraveler] = useState(false);
   const [travelerDetails, setTravelerDetails] = useState(null);
+  const [image, setImage] = useState(null);
 
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -46,6 +47,13 @@ const Dashboard = () => {
         .catch((error) => console.error("Error fetching parcels:", error));
     }
   }, [senderid]);
+  useEffect(() => {
+    fetch(parcels.image) // Adjust to your backend API
+      .then((res) => res.json())
+      .then((data) => {
+        setImage(data); // Assume it's an array of objects with image URLs
+      });
+  }, []);
 
   return (
     <div id="dashboard-container" className="min-h-screen p-6">
@@ -97,8 +105,9 @@ const Dashboard = () => {
                   id={`parcel-image-${index}`}
                   src={process.env.PUBLIC_URL + parcel.image}
                   alt="Parcel"
-                  onError={(e) => (e.target.src = process.env.PUBLIC_URL + "assert/1739541433205_courier.drawio.png.pngm")} height={100} width={100}
+                  onError={(e) => (e.target.src = process.env.PUBLIC_URL )} height={100} width={100}
                 />
+                {/* <img src={image.image} alt="Uploaded" style={{ width: "200px" }} /> */}
                 <p><strong>Dimensions:</strong><br></br> {parcel.dimantion}</p>
                 <p><strong>Weight:</strong><br></br> {parcel.weight} kg</p>
                 <p><strong>Price:</strong><br></br> ${parcel.price}</p>

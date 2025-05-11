@@ -61,6 +61,12 @@ const TravellerParcels = () => {
         ) : (
           parcels.map((parcel) => (
             <div key={parcel.productid} className="parcel-card">
+               <img
+                  // id={`parcel-image-${index}`}
+                  src={process.env.PUBLIC_URL + parcel.image}
+                  alt="Parcel"
+                  onError={(e) => (e.target.src = process.env.PUBLIC_URL)} height={100} width={100}
+                />
               <h3 className="parcel-info">
                 <strong>Sender:</strong> {parcel.user.name}
               </h3>

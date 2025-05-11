@@ -13,6 +13,7 @@ const ParcelSelection = () => {
   const [error, setError] = useState(null);
   const [selectedParcel, setSelectedParcel] = useState(null);
   const navigate = useNavigate();
+  const [image, setImage] = useState(null);
 
   useEffect(() => {
     if (userid) {
@@ -30,6 +31,13 @@ const ParcelSelection = () => {
         });
     }
   }, [userid]); // Runs when `userid` changes
+  useEffect(() => {
+    fetch(products.image) // Adjust to your backend API
+      .then((res) => res.json())
+      .then((data) => {
+        setImage(data); // Assume it's an array of objects with image URLs
+      });
+  }, []);
 
   // Function to handle parcel selection
   const handleSelectParcel = (parcelid) => {
@@ -78,10 +86,16 @@ const ParcelSelection = () => {
           <ul id="parcel-list">
             {products.map((product) => (
               <li key={product.productid} className="parcel-item">
-                <img
+                {/* <img
                   src={`http://localhost:8080/SwiftBridge/images/${product.image}`}
                   alt="Product"
                   className="parcel-image"
+                /> */}
+                 <img
+                  // id={`parcel-image-${index}`}
+                  src={process.env.PUBLIC_URL + product.image}
+                  alt="Parcel"
+                  onError={(e) => (e.target.src = process.env.PUBLIC_URL)} height={100} width={100}
                 />
                 <div className="parcel-details">
                   <p><strong>Product ID:</strong> {product.productid}</p>

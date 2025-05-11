@@ -5,7 +5,7 @@ import "./UploadProduct.css";
 
 const UploadProduct = () => {
   const navigate = useNavigate();
-
+  const formDta = new FormData();
   const [formData, setFormData] = useState({
     dimantion: "",
     weight: "",
@@ -43,6 +43,15 @@ const UploadProduct = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    formDta.append("file", formData.image);
+    formDta.append("upload_preset", "my_unsigned_preset");
+  
+    const res = await fetch("https://api.cloudinary.com/v1_1/dyyc5zv2u/image/upload", {
+      method: "POST",
+      body: formDta,
+    });
+    const data = await res.json();
+    console.log(data);
 
     if (!formData.image) {
       alert("Please select an image before submitting.");
@@ -50,7 +59,7 @@ const UploadProduct = () => {
     }
 
     const formDataToSend = new FormData();
-    formDataToSend.append("image", formData.image);
+    formDataToSend.append("image", data.secure_url);
     formDataToSend.append("dimantion", formData.dimantion);
     formDataToSend.append("weight", formData.weight);
     formDataToSend.append("price", formData.price);
