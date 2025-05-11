@@ -131,20 +131,17 @@ public class ServiceImplementation implements Servece{
 	
 	
 	@Override
-	public String addProduct(MultipartFile file, String dimantion, Double weight, Integer price, String fromAddress,
+	public String addProduct(String file, String dimantion, Double weight, Integer price, String fromAddress,
 			String toAddress, Long userId) {
 		try {
 		
 		 User existingUser = repo.findById(userId)
                  .orElseThrow(() -> new RuntimeException("User not found"));
    	
-		 String fileName = "P-" + UUID.randomUUID().toString().substring(0, 8) + "-" + file.getOriginalFilename();
-         Path filePath = Paths.get(UPLOAD_DIR, fileName);
-         Files.copy(file.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
          
          ParcelDetail parcel = new ParcelDetail();
          parcel.setUser(existingUser);
-         parcel.setImage(fileName);  // Store only the file name/path
+         parcel.setImage(file);  // Store only the file name/path
          parcel.setDimantion(dimantion);
          parcel.setWeight(weight);
          parcel.setPrice(price);
@@ -153,8 +150,6 @@ public class ServiceImplementation implements Servece{
 
          parcelrepo.save(parcel);
          return "Parcel successfully added with ID: " + parcel.getProductid();
-		}catch(IOException e) {
-			return("error saeing mssagee"+e.getMessage());
 		}catch(Exception a) {
 			return("Error saving paercel"+a.getMessage());
 		}
@@ -170,6 +165,7 @@ public class ServiceImplementation implements Servece{
 	        if (parcels.isEmpty()) {
 	            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	        } else {
+	            System.out.println(parcels);
 	            return new ResponseEntity<>(parcels, HttpStatus.OK);
 	        }
 	    }

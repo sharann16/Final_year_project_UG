@@ -66,7 +66,7 @@ public class Controller {
 	
 	
 	@PostMapping( "/addproduct")
-	public ResponseEntity<String> addProduct(@RequestParam("image") MultipartFile file,
+	public ResponseEntity<String> addProduct(@RequestParam("image") String file,
            									 @RequestParam("dimantion") String dimantion,
            									 @RequestParam("weight") Double weight,
            									 @RequestParam("price") Integer price,

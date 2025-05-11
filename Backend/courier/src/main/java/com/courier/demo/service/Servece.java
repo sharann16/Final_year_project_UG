@@ -32,7 +32,7 @@ public interface Servece {
 	 
 	 
 	 String selectedParcel( Long userid,String productid);
-	String addProduct(MultipartFile file, String dimantion, Double weight, Integer price, String fromAddress,
+	String addProduct(String file, String dimantion, Double weight, Integer price, String fromAddress,
 			String toAddress, Long userId);
 	 
 	boolean istravell(Long userid);
