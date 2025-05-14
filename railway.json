@@ -4,7 +4,7 @@
       "buildCommand": "cd Backend && ./mvnw clean install"
     },
     "start": {
-      "startCommand": "cd Backend && java -jar target/*.jar"
+"startCommand": "cd Backend && java -jar target/courier-0.0.1-SNAPSHOT.jar"
     }
   }
   
