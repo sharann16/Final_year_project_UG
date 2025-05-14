@@ -1,0 +1,10 @@
+{
+    "build": {
+      "builder": "nixpacks",
+      "buildCommand": "cd Backend && ./mvnw clean install"
+    },
+    "start": {
+      "startCommand": "cd Backend && java -jar target/*.jar"
+    }
+  }
+  
