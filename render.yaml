@@ -2,7 +2,7 @@ services:
   - type: web
     name: backend-service
     env: java
-    rootDir: backend/courier
+    rootDir: Backend/courier
     buildCommand: ./mvnw clean install
     startCommand: ./mvnw spring-boot:run
     plan: free
